@@ -14,8 +14,8 @@ defmodule Recursion do
 
     user_input = IO.gets("") |> String.trim()
 
-     IO.puts("#{msg}: command not found ")
-     IO.write("$ invalid_command  #{n} ")
+     IO.puts("#{user_input}: command not found ")
+     IO.write("$")
 
       print_multiple_times(msg, n + 1)
 
