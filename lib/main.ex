@@ -15,7 +15,6 @@ defmodule Recursion do
     user_input = IO.gets("") |> String.trim()
     
     if user_input == "exit" do
-      IO.puts(" is greater than 5")
     
 
     else 
