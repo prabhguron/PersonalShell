@@ -12,14 +12,17 @@ end
 
 defmodule Recursion do
   def print_multiple_times(msg, n) when n > 0 do
-
     user_input = IO.gets("") |> String.trim()
+    
+    if user_input == "exit" do
+      IO.puts(" is greater than 5")
+    
 
+    else 
      IO.puts("#{user_input}: command not found ")
      IO.write("$ ")
-
       print_multiple_times(msg, n + 1)
-
+      end
   end
   end
 
