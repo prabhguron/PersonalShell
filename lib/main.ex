@@ -65,7 +65,7 @@ IO.puts(Enum.join(args, " "))
 
 
   _ ->
-    IO.puts("#{user_input}: command not found")
+    IO.puts("#{user_input}: not found")
     IO.write("$ ")
     print_multiple_times(msg, n + 1)
 end
