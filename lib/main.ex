@@ -58,14 +58,14 @@ IO.puts(Enum.join(args, " "))
         print_multiple_times(msg, n + 1)
 
   _ ->
-      IO.puts("#{Enum.join(args, " ")} is a invalid command")
+      IO.puts("#{Enum.join(args, " ")} not found")
           print_multiple_times(msg, n + 1)
 
       end
 
 
   _ ->
-    IO.puts("#{user_input}: not found")
+    IO.puts("#{user_input}: command not found")
     IO.write("$ ")
     print_multiple_times(msg, n + 1)
 end
