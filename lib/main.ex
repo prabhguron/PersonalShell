@@ -59,6 +59,7 @@ IO.puts(Enum.join(args, " "))
 
   _ ->
       IO.puts("#{Enum.join(args, " ")} not found")
+          IO.write("$ ")
           print_multiple_times(msg, n + 1)
 
       end
