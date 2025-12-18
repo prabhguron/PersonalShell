@@ -36,6 +36,34 @@ IO.puts(Enum.join(args, " "))
   "exit" ->
     IO.puts("exit")
 
+  "type" ->
+  case args do
+
+  ["echo"] ->
+    IO.puts("#{Enum.join(args, " ")} is a shell builtin")
+        IO.write("$ ")
+
+        print_multiple_times(msg, n + 1)
+
+
+  ["exit"] ->
+    IO.puts("#{Enum.join(args, " ")} is a shell builtin")
+        IO.write("$ ")
+
+        print_multiple_times(msg, n + 1)
+  ["type"] ->
+    IO.puts("#{Enum.join(args, " ")} is a shell builtin")
+        IO.write("$ ")
+
+        print_multiple_times(msg, n + 1)
+
+  _ ->
+      IO.puts("#{Enum.join(args, " ")} is a invalid command")
+          print_multiple_times(msg, n + 1)
+
+      end
+
+
   _ ->
     IO.puts("#{user_input}: command not found")
     IO.write("$ ")
