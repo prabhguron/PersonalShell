@@ -33,14 +33,26 @@ case user_command do
 "cd" ->
 
   path = Enum.join(args, " ")
+  home = System.user_home()
 
-  case File.cd(path) do
+  checking_path = 
+  if path == "~"  do
+  home
+  else
+  path 
+  end
 
+
+ 
+
+case  File.cd(checking_path) do
   :ok ->
+
     IO.write("$ ")
   print_multiple_times(msg, n + 1)
 
   {error, _reason} ->
+
 
   IO.puts("cd: #{path}: No such file or directory")
     
