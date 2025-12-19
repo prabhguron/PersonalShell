@@ -30,6 +30,11 @@ case user_command do
 
 
 
+"pwd" ->
+IO.puts(File.cwd!())
+   IO.write("$ ")
+  print_multiple_times(msg, n + 1)
+  
 
     "echo" ->
 IO.puts(Enum.join(args, " "))
