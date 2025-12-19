@@ -37,7 +37,6 @@ case user_command do
   case File.cd(path) do
 
   :ok ->
-  IO.puts(File.cd(path))
     IO.write("$ ")
   print_multiple_times(msg, n + 1)
 
