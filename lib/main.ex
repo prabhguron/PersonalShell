@@ -42,7 +42,7 @@ case user_command do
 
   {error, _reason} ->
 
-  IO.puts("cd #{path}: No such file or directory")
+  IO.puts("cd:#{path}: No such file or directory")
     
     IO.write("$ ")
   print_multiple_times(msg, n + 1)
