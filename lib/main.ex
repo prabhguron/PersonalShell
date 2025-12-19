@@ -33,6 +33,7 @@ IO.puts(Enum.join(args, " "))
     print_multiple_times(msg, n + 1)
 
 
+
   "exit" ->
     IO.puts("exit")
 
@@ -57,12 +58,31 @@ IO.puts(Enum.join(args, " "))
 
         print_multiple_times(msg, n + 1)
 
+   [cmd] ->
+  result = System.find_executable(cmd)
+
+    if result do 
+
+       IO.puts("#{cmd} is #{System.find_executable(cmd)}")
+        IO.write("$ ")
+        print_multiple_times(msg, n + 1)
+
+        else 
+         IO.puts("#{cmd} is not found")
+        IO.write("$ ")
+        print_multiple_times(msg, n + 1)  
+        end
+
+
+
+
   _ ->
       IO.puts("#{Enum.join(args, " ")} not found")
           IO.write("$ ")
           print_multiple_times(msg, n + 1)
 
       end
+
 
 
   _ ->
