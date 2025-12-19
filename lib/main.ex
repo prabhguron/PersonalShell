@@ -92,22 +92,17 @@ IO.puts(Enum.join(args, " "))
 
   _ ->
 
+file = System.find_executable(user_command)
 
-  file = System.find_executable(user_command)
+if file do
 
-  if file do 
-args_to = [user_command | args]
 
-  {output, exit_code} = System.cmd(file, args_to)
-
+  args_to_pass = args 
+  {output, _exit_code} = System.cmd(file, args_to_pass)
   IO.puts(output)
-
-  else 
-    IO.puts("#{user_input}: command not found")
-    end
-        
-     IO.write("$ ")
-    print_multiple_times(msg, n + 1)
+else
+  IO.puts("#{user_input}: command not found")
+end
 
 end
 
