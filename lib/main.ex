@@ -18,7 +18,7 @@ defmodule Recursion do
     #splits into list and first list is user command rest args
 
 
-    [user_command | args] =OptionParser.split(user_input)
+    [user_command | args] = String.split(user_input)
 
 
 
