@@ -34,7 +34,7 @@ case user_command do
 IO.puts(File.cwd!())
    IO.write("$ ")
   print_multiple_times(msg, n + 1)
-  
+
 
     "echo" ->
 IO.puts(Enum.join(args, " "))
@@ -48,6 +48,11 @@ IO.puts(Enum.join(args, " "))
   "type" ->
   case args do
 
+    ["pwd"] ->
+    IO.puts("#{Enum.join(args, " ")} is a shell builtin")
+        IO.write("$ ")
+
+        print_multiple_times(msg, n + 1)
   ["echo"] ->
     IO.puts("#{Enum.join(args, " ")} is a shell builtin")
         IO.write("$ ")
