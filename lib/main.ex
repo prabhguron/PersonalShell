@@ -27,11 +27,14 @@ defmodule Recursion do
 
 #checks user command
 case user_command do
+
+
+
+
     "echo" ->
 IO.puts(Enum.join(args, " "))
         IO.write("$ ")
     print_multiple_times(msg, n + 1)
-
 
 
   "exit" ->
@@ -77,6 +80,8 @@ IO.puts(Enum.join(args, " "))
 
 
   _ ->
+
+
       IO.puts("#{Enum.join(args, " ")} not found")
           IO.write("$ ")
           print_multiple_times(msg, n + 1)
@@ -86,9 +91,22 @@ IO.puts(Enum.join(args, " "))
 
 
   _ ->
+
+
+  file = System.find_executable(user_command)
+
+  if file do 
+  {output, exit_code} = System.cmd(user_command, args)
+
+  IO.puts(output)
+
+  else 
     IO.puts("#{user_input}: command not found")
-    IO.write("$ ")
+    end
+        
+     IO.write("$ ")
     print_multiple_times(msg, n + 1)
+
 end
 
   end
