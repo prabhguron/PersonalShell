@@ -68,7 +68,7 @@ IO.puts(Enum.join(args, " "))
         print_multiple_times(msg, n + 1)
 
         else 
-         IO.puts("#{cmd} is not found")
+         IO.puts("#{cmd} not found")
         IO.write("$ ")
         print_multiple_times(msg, n + 1)  
         end
