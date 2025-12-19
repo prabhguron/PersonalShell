@@ -96,7 +96,7 @@ IO.puts(Enum.join(args, " "))
   file = System.find_executable(user_command)
 
   if file do 
-  {output, exit_code} = System.cmd(user_command, args)
+  {output, exit_code} = System.cmd(file, args)
 
   IO.puts(output)
 
